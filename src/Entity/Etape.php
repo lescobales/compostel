@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\EtapeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EtapeRepository::class)]
@@ -26,6 +27,9 @@ class Etape
 
     #[ORM\OneToMany(mappedBy: 'etape', targetEntity: Comments::class)]
     private Collection $comments;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
 
     public function __construct()
     {
@@ -99,6 +103,18 @@ class Etape
                 $comment->setEtape(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): static
+    {
+        $this->description = $description;
 
         return $this;
     }

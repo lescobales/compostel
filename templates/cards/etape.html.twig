@@ -1,0 +1,22 @@
+<div class="m-3 border rounded-4 p-3" style="background-color: rgba(0, 255, 0, .5)">
+  <h2 class="fs-6">{{ etape.nom }} ({{ etape.distance }} kms) Avis: {{etape.comments|length}}</h2>
+  
+  <p>
+    {% set sum = 0 %}
+    {% for comment in etape.comments %}
+    {% set sum = comment.note + sum %}
+    {% endfor %}
+    {% if etape.comments|length > 0 %}
+    {% set moy = sum / etape.comments|length %}
+    {{moy}}
+    {% endif %}
+
+
+    
+  </p>
+
+    <div>
+    <img src="{{etape.photos }}/main.jpg" alt="{{etape.photos}}" width="100%" height="100px">
+    </div>
+    <p style="font-size:0.5rem;">{{ etape.description }}</p>
+</div>

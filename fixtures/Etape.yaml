@@ -1,0 +1,26 @@
+App\Entity\Etape:
+  e1:
+    nom: 'saugues_le-sauvage'
+    distance: 19.4
+    photos: 'etapes/E1'
+    description: '<sentence(20)>'
+  e2:
+    nom: 'le-sauvage_aumont-aubrac'
+    distance: 28.4
+    photos: 'etapes/E2'
+    description: '<sentence(20)>'
+  e3:
+    nom: aumont-aubrac_nasbinals'
+    distance: 26.3
+    photos: 'etapes/E3'
+    description: '<sentence(20)>'
+  e4:
+    nom: 'nasbinals_st-chely-d-aubrac'
+    distance: 16.4
+    photos: 'etapes/E4'
+    description: '<sentence(20)>'
+  e5:
+    nom: 'st-chely-d-aubrac_espalion'
+    distance: 24.8
+    photos: 'etapes/E5'
+    description: '<sentence(20)>'

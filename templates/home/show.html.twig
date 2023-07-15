@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etape {{etape.id}}{% endblock %}
+
+{% block body %}
+
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active" style="padding-bottom: 56.25%;position: relative;overflow: hidden;">
+      <img src="./etapes/E{{etape.id}}/main.jpg" class="d-block w-100" alt="main.jpg" style="position: absolute;top: 0; left: 0;height: 100%;width: 100%; object-fit: cover;">
+    </div>
+
+    {% for file in scandir %}
+    {% if file != '.' and file != '..'%}
+    <div class="carousel-item" style="padding-bottom: 56.25%;position: relative;overflow: hidden;">
+      <img src="./etapes/E{{etape.id}}/{{file}}" class="d-block w-100" alt="{{file}}" style="position: absolute;top: 0; left: 0;height: 100%;width: 100%; object-fit: cover;">
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+ {{ form_start(form) }}
+    {{ form_row(form) }}
+ {{ form_end(form) }}
+{% endblock %}
