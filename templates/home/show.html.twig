@@ -13,7 +13,7 @@
     </div>
 
     {% for file in scandir %}
-    {% if file != '.' and file != '..' and file != 'carte.png'%}
+    {% if file != '.' and file != '..' and file != 'carte.png' and file != 'main.m4a'%}
     <div class="carousel-item">
       <img src="./etapes/E{{etape.id}}/{{file}}" class="d-block w-100" alt="{{file}}" style="position: absolute;top: 0; left: 0;height: 100%;width: 100%; object-fit: cover;">
     </div>
