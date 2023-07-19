@@ -4,17 +4,17 @@
 
 {% block body %}
 
-
+<h1 class="text-center">{{ etape.nom }}</h1>
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
 
-    <div class="carousel-item active" style="padding-bottom: 56.25%;position: relative;overflow: hidden;">
+    <div class="carousel-item active">
       <img src="./etapes/E{{etape.id}}/main.jpg" class="d-block w-100" alt="main.jpg" style="position: absolute;top: 0; left: 0;height: 100%;width: 100%; object-fit: cover;">
     </div>
 
     {% for file in scandir %}
-    {% if file != '.' and file != '..'%}
-    <div class="carousel-item" style="padding-bottom: 56.25%;position: relative;overflow: hidden;">
+    {% if file != '.' and file != '..' and file != 'carte.png'%}
+    <div class="carousel-item">
       <img src="./etapes/E{{etape.id}}/{{file}}" class="d-block w-100" alt="{{file}}" style="position: absolute;top: 0; left: 0;height: 100%;width: 100%; object-fit: cover;">
     </div>
     {% endif %}
@@ -29,8 +29,17 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
+<p>
+  <a class="btn btn-primary mt-2 w-100" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Carte
+  </a>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <img src="./etapes/E{{etape.id}}/carte.png" alt="carte">
+  </div>
+</div>
  {{ form_start(form) }}
-    {{ form_row(form) }}
+    {{ form_rest(form) }}
  {{ form_end(form) }}
 {% endblock %}

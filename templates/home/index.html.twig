@@ -5,11 +5,13 @@
 {% block body %}
 <h1 class="text-center">Les Etapes</h1>
     {% for etape in etapes %}
+    <div>
         <a href="{{ path('app_home_show', {'id':etape.id}) }}">{% include 'cards/etape.html.twig' with 
             {
                 'etape' : etape
             } 
         %}</a>
+    </div>
     {% endfor %}
 
 {% endblock %}

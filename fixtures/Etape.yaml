@@ -1,26 +1,26 @@
 App\Entity\Etape:
   e1:
-    nom: 'saugues_le-sauvage'
+    nom: 'Saugues => Le sauvage'
     distance: 19.4
     photos: 'etapes/E1'
-    description: '<sentence(20)>'
+    description: Notre première étapes qui va nous faire arriver à la porte de la Lozère... 20 kms ça ne paraît pas beaucoup mais elle monte pas mal!! Seule étape où nous faisons camping sauvage dans un bois... Au top!
   e2:
-    nom: 'le-sauvage_aumont-aubrac'
-    distance: 28.4
+    nom: 'Le sauvage => Aumont-Aubrac'
+    distance: 28.2
     photos: 'etapes/E2'
-    description: '<sentence(20)>'
+    description: L'étape la plus longue de notre pèlerinage. Nous pensons qu'elle va se dérouler facilement vu la description. Jusqu'à St Alban sur Limagnole, c'est très facile, mais la fin est très valonée et on termine sur les rotules. Heureusement le soir nous sommes hébergés avec un bon lit et un bon repas.
   e3:
-    nom: aumont-aubrac_nasbinals'
+    nom: Aumont-Aubrac => Nasbinals
     distance: 26.3
     photos: 'etapes/E3'
-    description: '<sentence(20)>'
+    description: Une des étapes les plus belles et lorsqu'on se retrouve sur les hauteurs de l'Aubrac c'est tout simplement magique. On en prend pleins les yeux!! 
   e4:
-    nom: 'nasbinals_st-chely-d-aubrac'
-    distance: 16.4
+    nom: Nasbinals => St-Chely-d'Aubrac
+    distance: 16.7
     photos: 'etapes/E4'
-    description: '<sentence(20)>'
+    description: La plus courte.... Nous prenons cette étape à la légère et au final il s'agit de l'étape la plus difficile mentalement. L'audio en dit plus ;)... Malgré des douleurs un peu de partout, nous nous faisons une bonne côte de boeuf de l'Aubrac accompagnée d'un aligot afin de rester dans le thème!!
   e5:
-    nom: 'st-chely-d-aubrac_espalion'
-    distance: 24.8
+    nom: St-Chely-d'Aubrac => Espalion
+    distance: 24.6
     photos: 'etapes/E5'
-    description: '<sentence(20)>'
+    description: Dernière étape et certainement la plus belle!!! De la descente quasi tout le long et des paysages à couper le souffle!! L'arrivée sur Espalion est tout simplement magique et nous profitons de notre dernière soirée en se faisant une bonne pizza.

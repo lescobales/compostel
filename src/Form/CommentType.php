@@ -13,10 +13,19 @@ class CommentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('pseudo')
-            ->add('contents')
-            ->add('note')
-            ->add('comment', SubmitType::class)
+            ->add('pseudo',null,[
+                'attr' => ['class' => 'input-group form-control']
+            ])
+            ->add('contents',null,[
+                'attr' => ['class' => 'input-group form-control'],
+                'label' => 'Commentaire'
+            ])
+            ->add('note',null,[
+                'attr' => ['class' => 'input-group form-control']
+            ])
+            ->add('commenter', SubmitType::class,[
+                'attr' => ['class' => 'btn btn-secondary mt-3 w-100']
+            ])
         ;
     }
 

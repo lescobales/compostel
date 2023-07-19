@@ -1,22 +1,34 @@
-<div class="m-3 border rounded-4 p-3" style="background-color: rgba(0, 255, 0, .5)">
-  <h2 class="fs-6">{{ etape.nom }} ({{ etape.distance }} kms) Avis: {{etape.comments|length}}</h2>
-  
-  <p>
-    {% set sum = 0 %}
-    {% for comment in etape.comments %}
-    {% set sum = comment.note + sum %}
-    {% endfor %}
+<div class="m-2 border rounded-4 etape">
+      {% set sum = 0 %}
+      {% for comment in etape.comments %}
+      {% set sum = comment.note + sum %}
+      {% endfor %}
+  <ul class="position-relative m-0">
+    <li>{{ etape.nom }}</li>
+    <li>{{ etape.distance }} kms</li>
     {% if etape.comments|length > 0 %}
-    {% set moy = sum / etape.comments|length %}
-    {{moy}}
-    {% endif %}
-
-
-    
-  </p>
+    <li><a href="{{ path('app_comment', {'id': etape.id}) }}">Avis: {{etape.comments|length}} <i class="bi bi-eye position-absolute translate-middle end-0 fs-3 text-primary me-3"></i></a></li>
+    <li>
+      {% set moy = sum / etape.comments|length %}
+      Note: {{moy|round(1, 'floor')}} / 5
+    </li>
+      {% endif %}
+  </ul>
 
     <div>
+    <a href="{{ path('app_home_show', {'id':etape.id}) }}">
     <img src="{{etape.photos }}/main.jpg" alt="{{etape.photos}}" width="100%" height="100px">
     </div>
-    <p style="font-size:0.5rem;">{{ etape.description }}</p>
+    <p>{{ etape.description }}</p>
+    </a>
+    <figure>
+    <audio
+        class="w-75 d-block mx-auto rounded-3"
+        controls
+        src="{{etape.photos }}/main.m4a">
+            <a href="{{etape.photos }}/main.m4a">
+                Download audio
+            </a>
+    </audio>
+    </figure>
 </div>
